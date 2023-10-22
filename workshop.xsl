@@ -31,13 +31,7 @@
                     <option value="2">employee</option>
                     <option value="3">order</option>
                 </select>
-                <br/>
-                <label for="method">Method: </label>
-                <select name="method" id="method" onchange="setMethod(this);">
-                    <option value="1">Стандартный</option>
-                    <option value="2">DOM</option>
-                    <option value="3">PHP</option>
-                </select>
+                
                 <form name="form1" class="addforms" method="post" action="vendor/client.php" onsubmit="onFormSubmit(event);" style="display:block" >
                     <!-- Форма для создания клиента -->
                     <h3>Создание клиента</h3>
