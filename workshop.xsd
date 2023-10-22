@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- <xs:element name="root-element">
+        
+    </xs:element> -->
+
+    <xsd:complexType name="client">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="email" type="xsd:string"/>
+            <xsd:element name="telephone" type="xsd:string"/>
+            <xsd:element name="birth" type="xsd:date"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="clients">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="client" type="client" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="employee">
+        <xsd:sequence>
+            <xsd:element name="post_id" type="xsd:integer"/>
+            <xsd:element name="fullname" type="xsd:string"/>
+            <xsd:element name="date_of_employment" type="xsd:date"/>
+            <xsd:element name="birth" type="xsd:date"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="employees">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="employee" type="employee" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="post">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="department_id" type="xsd:integer"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="posts">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="post" type="post" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="department">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="departments">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="department" type="department" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="status">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="statuses">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="status" type="status" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="manufacturer">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="manufacturers">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="manufacturer" type="manufacturer" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="operation_type">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="operation_types">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="operation_type" type="operation_type" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="order">
+        <xsd:sequence>
+            <xsd:element name="client_id" type="xsd:integer"/>
+            <xsd:element name="status_id" type="xsd:integer"/>
+            <xsd:element name="employee_id" type="xsd:integer"/>
+            <xsd:element name="transaction_id" type="xsd:integer"/>
+            <xsd:element name="comment" type="xsd:string"/>
+            <xsd:element name="date_order" type="xsd:dateTime"/>
+            <xsd:element name="date_complete" type="xsd:dateTime"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="orders">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="order" type="order" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="appeal">
+        <xsd:sequence>
+            <xsd:element name="client_id" type="xsd:integer"/>
+            <xsd:element name="theme" type="xsd:string"/>
+            <xsd:element name="comment" type="xsd:string"/>
+            <xsd:element name="date" type="xsd:dateTime"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="appeals">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="appeal" type="appeal" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="transaction">
+        <xsd:sequence>
+            <xsd:element name="type_id" type="xsd:integer"/>
+            <xsd:element name="status_id" type="xsd:integer"/>
+            <xsd:element name="date" type="xsd:dateTime"/>
+            <xsd:element name="amount" type="xsd:integer"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="transactions">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="transaction" type="transaction" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="promotion">
+        <xsd:sequence>
+            <xsd:element name="transaction_id" type="xsd:integer"/>
+            <xsd:element name="service_name" type="xsd:string"/>
+            <xsd:element name="date" type="xsd:dateTime"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="promotions">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="promotion" type="promotion" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="part">
+        <xsd:sequence>
+            <xsd:element name="manufacturer_id" type="xsd:integer"/>
+            <xsd:element name="nomenclature" type="xsd:string"/>
+            <xsd:element name="manufacturer_id" type="xsd:integer"/>
+            <xsd:element name="count" type="xsd:integer"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="parts">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="part" type="part" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="movement_parts">
+        <xsd:sequence>
+            <xsd:element name="part_id" type="xsd:integer"/>
+            <xsd:element name="type_id" type="xsd:integer"/>
+            <xsd:element name="count" type="xsd:integer"/>
+            <xsd:element name="comment" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="movements_parts">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="movement_parts" type="movement_parts" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="delivery">
+        <xsd:sequence>
+            <xsd:element name="status_id" type="xsd:integer"/>
+            <xsd:element name="movement_parts_id" type="xsd:integer"/>
+            <xsd:element name="transaction_id" type="xsd:integer"/>
+            <xsd:element name="date_create" type="xsd:dateTime"/>
+            <xsd:element name="date_done" type="xsd:dateTime"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="deliveries">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="delivery" type="delivery" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="workshop">
+        <xsd:all>
+            <xsd:element ref="clients" />
+            <xsd:element ref="employees" />
+            <xsd:element ref="posts" />
+            <xsd:element ref="departments" />
+            <xsd:element ref="statuses"/>
+            <xsd:element ref="manufacturers"/>
+            <xsd:element ref="operation_types"/>
+            <xsd:element ref="orders"/>
+            <xsd:element ref="appeals"/>
+            <xsd:element ref="transactions"/>
+            <xsd:element ref="promotions"/>
+            <xsd:element ref="parts"/>
+            <xsd:element ref="movements_parts"/>
+            <xsd:element ref="deliveries"/>
+        </xsd:all>
+    </xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,101 @@
+<!ELEMENT workshop (clients,employes,posts,departments,statuses,manufacturers,operation_types,orders,appeals,transactions,promotions,parts,movements_parts,deliveries)>
+
+<!ELEMENT clients (client+)>
+<!ELEMENT client (fullname, email, telephone, birth)>
+<!ELEMENT fullname (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT telephone (#PCDATA)>
+<!ELEMENT birth (#PCDATA)>
+<!ATTLIST client id_cl ID #REQUIRED>
+
+<!ELEMENT employes (employee+)>
+<!ELEMENT employee (post_id, fullname, date_of_employment, birth)>
+<!ELEMENT post_id (#PCDATA)>
+<!ELEMENT fullname (#PCDATA)>
+<!ELEMENT date_of_employment (#PCDATA)>
+<!ELEMENT birth (#PCDATA)>
+<!ATTLIST employee id_emp ID #REQUIRED>
+
+<!ELEMENT posts (post+)>
+<!ELEMENT post (name, department_id)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT department_id (#PCDATA)>
+<!ATTLIST post id_post ID #REQUIRED>
+
+<!ELEMENT departments (department+)>
+<!ELEMENT department (name)>
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST department id_dept ID #REQUIRED>
+
+<!ELEMENT statuses (status+)>
+<!ELEMENT status (name)>
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST status id_st ID #REQUIRED>
+
+<!ELEMENT manufacturers (manufacturer+)>
+<!ELEMENT manufacturer (name)>
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST manufacturer id_man ID #REQUIRED>
+
+<!ELEMENT operation_types (operation_type+)>
+<!ELEMENT operation_type (name)>
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST operation_type id_op ID #REQUIRED>
+
+<!ELEMENT orders (order+)>
+<!ELEMENT order (client_id,status_id,employee_id,transaction_id,date_order,date_complete,comment)>
+<!ELEMENT client_id (#PCDATA)>
+<!ELEMENT status_id (#PCDATA)>
+<!ELEMENT employee_id (#PCDATA)>
+<!ELEMENT transaction_id (#PCDATA)>
+<!ELEMENT date_order (#PCDATA)>
+<!ELEMENT date_complete (#PCDATA)>
+<!ELEMENT comment (#PCDATA)>
+<!ATTLIST order id_or ID #REQUIRED>
+
+<!ELEMENT appeals (appeal+)>
+<!ELEMENT appeal (client_id,theme,content,date)>
+<!ELEMENT client_id (#PCDATA)>
+<!ELEMENT theme (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ATTLIST appeal id_ap ID #REQUIRED>
+
+<!ELEMENT transactions (transaction+)>
+<!ELEMENT transaction (type_id,status_id,date,amount)>
+<!ELEMENT type_id (#PCDATA)>
+<!ELEMENT status_id (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT amount (#PCDATA)>
+<!ATTLIST transaction id_tr ID #REQUIRED>
+
+<!ELEMENT promotions (promotion+)>
+<!ELEMENT promotion (transaction_id,service_name,date)>
+<!ELEMENT transaction_id (#PCDATA)>
+<!ELEMENT service_name (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ATTLIST promotion id_pr ID #REQUIRED>
+
+<!ELEMENT parts (part+)>
+<!ELEMENT part (nomenclature,manufacturer_id,count)>
+<!ELEMENT nomenclature (#PCDATA)>
+<!ELEMENT manufacturer_id (#PCDATA)>
+<!ELEMENT count (#PCDATA)>
+<!ATTLIST part id_part ID #REQUIRED>
+
+<!ELEMENT movements_parts (movement_parts+)>
+<!ELEMENT movement_parts (part_id,type_id,count,comment)>
+<!ELEMENT part_id (#PCDATA)>
+<!ELEMENT type_id (#PCDATA)>
+<!ELEMENT count (#PCDATA)>
+<!ELEMENT comment (#PCDATA)>
+<!ATTLIST movement_parts id_mp ID #REQUIRED>
+
+<!ELEMENT deliveries (delivery+)>
+<!ELEMENT delivery (status_id,movement_parts_id,transaction_id,date_create,date_done)>
+<!ELEMENT status_id (#PCDATA)>
+<!ELEMENT movement_parts_id (#PCDATA)>
+<!ELEMENT transaction_id (#PCDATA)>
+<!ELEMENT date_create (#PCDATA)>
+<!ELEMENT date_done (#PCDATA)>
+<!ATTLIST delivery id_del ID #REQUIRED>
