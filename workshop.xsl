@@ -38,7 +38,7 @@
                     <option value="2">DOM</option>
                     <option value="3">PHP</option>
                 </select>
-                <form name="form1" class="addforms" method="post" action="vendor/client.php" onsubmit="onFormSubmit(event);" style="display:block" >
+                <form name="workshop-clients-client" class="addforms" method="post" action="vendor/client.php" onsubmit="onFormSubmit(event);" style="display:block" >
                     <!-- Форма для создания клиента -->
                     <h3>Создание клиента</h3>
                     <label for="fullname">Fullname: </label>
@@ -52,7 +52,7 @@
                     <input type="submit" name="submit1" value="Добавить запись"/>
                 </form>
 
-                <form name="form2" class="addforms" method="post" action="vendor/employee.php" id="form2" style="display:none">
+                <form name="workshop-employes-employee" class="addforms" method="post" action="vendor/employee.php" id="form2" onsubmit="onFormSubmit(event);" style="display:none">
                     <!-- Форма для создания сотрудника -->
                     <label for="fullname">Fullname: </label>
                     <input type="text" name="fullname" id="fullname"/><br/>
@@ -75,7 +75,7 @@
                     <input type="submit" name="submit1" value="Добавить запись"/>
                 </form>
 
-                <form name="form3" class="addforms" method="post" action="vendor/order.php" id="form3" style="display:none">
+                <form name="workshop-orders-order" class="addforms" method="post" action="vendor/order.php" id="form3" onsubmit="onFormSubmit(event);" style="display:none">
                     <!-- Форма для создания заказа -->
                     <label for="client_id">Client: </label>
                     <select name="client_id" id="client_id">
