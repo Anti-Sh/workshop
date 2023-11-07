@@ -12,7 +12,7 @@
     $dom->load('../workshop.xml');
     $ii = $_POST['row_index'];
     $i = $ii - 1;
-    $nodeToDelete = $dom->getElementsByTagName('client')->item($i);
+    $nodeToDelete = $dom->getElementsByTagName('employee')->item($i);
 
     if ($nodeToDelete) {
         $nodeToDelete->parentNode->removeChild($nodeToDelete);

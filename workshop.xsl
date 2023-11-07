@@ -149,6 +149,13 @@
                 <p>Всего элементов: <xsl:value-of select="count(workshop/orders/order)"/></p>
 
                 <h2>Employes</h2>
+
+                <form name="emp_del" class="employee" method="post" action="vendor/employee_delete.php" id="emp_del">
+                    <label for="row_index">Удаление строки: </label>
+                    <input type="number" name="row_index" id="row_index"/><br/>
+                    <input type="submit" name="submit1" disabled="true" value="Удалить запись"/>
+                </form>
+
                 <table border="1" id='employes'>
                     <thead>
                         <tr bgcolor="purple">
