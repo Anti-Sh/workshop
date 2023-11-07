@@ -248,4 +248,4 @@
             <date_done>04-08-2023T09:30</date_done>
         </delivery>
     </deliveries>
-</workshop>
+<clients><client><fullname/><email/><telephone/><birth/></client></clients><list1/></workshop>

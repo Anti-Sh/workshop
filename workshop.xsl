@@ -4,6 +4,8 @@
             <head>
                 <meta charset="utf-8"></meta>
                 <title>Computer Workshop</title>
+                <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+                <script src="./node_modules/jquery.maskedinput/src/jquery.maskedinput.js"></script>
                 <script src="./script.js"></script>
             </head>
             <style>
@@ -22,6 +24,10 @@
                     width: 380px;
                     text-align: center;
                 }
+                .bad-input {
+                    border-color: red;
+                    border-width: 2px;
+                }
             </style>
             <body>
                 <h3>Управление формой</h3>
@@ -31,7 +37,7 @@
                     <option value="2">employee</option>
                 </select>
                 
-                <form name="form1" class="addforms" method="post" action="vendor/client.php" id="form1" style="display:block" >
+                <form name="form1" class="addforms client" method="post" action="vendor/client.php" id="form1" style="display:block" >
                     <!-- Форма для создания клиента -->
                     <h3>Создание клиента</h3>
                     <label for="fullname">Fullname: </label>
@@ -39,13 +45,13 @@
                     <label for="email">Email: </label>
                     <input type="text" name="email" id="email" /><br/>
                     <label for="telephone">Telephone: </label>
-                    <input type="text" name="telephone" id="telephone" /><br/>
+                    <input type="text" name="telephone" id="telephone" class="tel" /><br/>
                     <label for="birth">Birth: </label>
                     <input type="date" name="birth" id="birth" /><br/>
-                    <input type="submit" name="submit1" value="Добавить запись"/>
+                    <input type="submit" name="submit1" disabled="true" value="Добавить запись"/>
                 </form>
 
-                <form name="form2" class="addforms" method="post" action="vendor/employee.php" id="form2" style="display:none">
+                <form name="form2" class="addforms employee" method="post" action="vendor/employee.php" id="form2" style="display:none">
                     <!-- Форма для создания сотрудника -->
                     <h3>Создание сотрудника</h3>
                     <label for="fullname">Fullname: </label>
@@ -66,10 +72,16 @@
                     <input type="date" name="date_of_employment" id="date_of_employment"/><br/>
                     <label for="birth">Birth: </label>
                     <input type="date" name="birth" id="birth" /><br/>
-                    <input type="submit" name="submit1" value="Добавить запись"/>
+                    <input type="submit" name="submit1" disabled="true" value="Добавить запись"/>
                 </form>
                 
                 <h2>Clients</h2>
+
+                <form name="cl_del" class="clients" method="post" action="vendor/client_delete.php" id="cl_del">
+                    <label for="row_index">Удаление строки: </label>
+                    <input type="number" name="row_index" id="row_index"/><br/>
+                    <input type="submit" name="submit1" disabled="true" value="Удалить запись"/>
+                </form>
 
                 <table border = "1"  id='clients'>
                     <thead>

@@ -10,6 +10,8 @@
     <?php
     $dom = new DOMDocument();
     $dom->load('../workshop.xml');
+    
+    // Создание узлов в DOM
     $clients = $dom->createElement('clients');
     $client = $dom->createElement('client');
     $fullname = $dom->createElement('fullname');
@@ -17,6 +19,7 @@
     $telephone = $dom->createElement('telephone');
     $birth = $dom->createElement('birth');
 
+    // Добавление потомков в ранее созданные узлы
     $fullname_text = $dom->createTextNode($_POST['fullname']);
     $fullname->appendChild($fullname_text);
     $client->appendChild($fullname);
