@@ -110,43 +110,22 @@
                         </xsl:for-each>
                     </tbody>
                 </table>
-                <p>Всего элементов: <xsl:value-of select="count(workshop/clients/client)"/></p>
 
-                <h2>Orders</h2>
-                <table border = "1"  id='orders'>
-                    <thead>
-                        <tr bgcolor="purple">
-                            <th>№</th>
-                            <th>Client ID</th>
-                            <th>Status ID</th>
-                            <th>Employee ID</th>
-                            <th>Transaction ID</th>
-                            <th>Date Order</th>
-                            <th>Date Complete</th>
-                            <th>Comment</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <xsl:for-each select="workshop/orders/order">
-                            <tr>
-                                <xsl:if test="position() mod 2=1">
-                                    <xsl:attribute name="style">
-                                        background-color: pink;
-                                    </xsl:attribute>
-                                </xsl:if> 
-                                <td><xsl:value-of select="position()"/></td>
-                                <td><xsl:value-of select="client_id"/></td>
-                                <td><xsl:value-of select="status_id"/></td>
-                                <td><xsl:value-of select="employee_id"/></td>
-                                <td><xsl:value-of select="transaction_id"/></td>
-                                <td><xsl:value-of select="date_order"/></td>
-                                <td><xsl:value-of select="date_complete"/></td>
-                                <td><xsl:value-of select="comment"/></td>
-                            </tr>
-                        </xsl:for-each>
-                    </tbody>
-                </table>
-                <p>Всего элементов: <xsl:value-of select="count(workshop/orders/order)"/></p>
+                <form name="cl_put" class="client" method="post" action="vendor/client_put.php" id="cl_put">
+                    <label for="row_index">Номер строки: </label>
+                    <input type="number" name="row_index" id="row_index"/><br/>
+                    <label for="fullname">Fullname: </label>
+                    <input type="text" name="fullname" id="fullname"/><br/>
+                    <label for="email">Email: </label>
+                    <input type="text" name="email" id="email" /><br/>
+                    <label for="telephone">Telephone: </label>
+                    <input type="text" name="telephone" id="telephone" class="tel" /><br/>
+                    <label for="birth">Birth: </label>
+                    <input type="date" name="birth" id="birth" /><br/>
+                    <input type="submit" name="submit1" disabled="true" value="Перезаписать"/>
+                </form>
+
+                <p>Всего элементов: <xsl:value-of select="count(workshop/clients/client)"/></p>
 
                 <h2>Employes</h2>
 
@@ -184,7 +163,68 @@
                         </xsl:for-each>
                     </tbody>
                 </table>
+
+                <form name="emp_put" class="employee" method="post" action="vendor/employee_put.php" id="emp_put">
+                    <label for="row_index">Номер строки: </label>
+                    <input type="number" name="row_index" id="row_index"/><br/>
+                    <label for="fullname">Fullname: </label>
+                    <input type="text" name="fullname" id="fullname"/><br/>
+                    <label for="post_id">Post: </label>
+                    <select name="post_id" id="post_id">
+                        <xsl:for-each select = "workshop/posts/post">
+                            <option>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="position()"/>
+                                </xsl:attribute>
+                                <xsl:value-of select="name"/>
+                            </option>
+                        </xsl:for-each>
+                    </select>
+                    <br/>
+                    <label for="date_of_employment">Date Of Employment: </label>
+                    <input type="date" name="date_of_employment" id="date_of_employment"/><br/>
+                    <label for="birth">Birth: </label>
+                    <input type="date" name="birth" id="birth" /><br/>
+                    <input type="submit" name="submit1" disabled="true" value="Перезаписать"/>
+                </form>
+
                 <p>Всего элементов: <xsl:value-of select="count(workshop/employes/employee)"/></p>
+
+                <h2>Orders</h2>
+                <table border = "1"  id='orders'>
+                    <thead>
+                        <tr bgcolor="purple">
+                            <th>№</th>
+                            <th>Client ID</th>
+                            <th>Status ID</th>
+                            <th>Employee ID</th>
+                            <th>Transaction ID</th>
+                            <th>Date Order</th>
+                            <th>Date Complete</th>
+                            <th>Comment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <xsl:for-each select="workshop/orders/order">
+                            <tr>
+                                <xsl:if test="position() mod 2=1">
+                                    <xsl:attribute name="style">
+                                        background-color: pink;
+                                    </xsl:attribute>
+                                </xsl:if> 
+                                <td><xsl:value-of select="position()"/></td>
+                                <td><xsl:value-of select="client_id"/></td>
+                                <td><xsl:value-of select="status_id"/></td>
+                                <td><xsl:value-of select="employee_id"/></td>
+                                <td><xsl:value-of select="transaction_id"/></td>
+                                <td><xsl:value-of select="date_order"/></td>
+                                <td><xsl:value-of select="date_complete"/></td>
+                                <td><xsl:value-of select="comment"/></td>
+                            </tr>
+                        </xsl:for-each>
+                    </tbody>
+                </table>
+                <p>Всего элементов: <xsl:value-of select="count(workshop/orders/order)"/></p>
 
                 <h2>Posts</h2>
                 <table border="1" id='posts'>

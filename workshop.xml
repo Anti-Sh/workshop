@@ -15,12 +15,7 @@
             <telephone>89132358423</telephone>
             <birth>25-01-1980</birth>
         </client>
-        <client id_cl="3">
-            <fullname>Petr Ivanov</fullname>
-            <email>petr@ivanov.nn</email>
-            <telephone>89132473355</telephone>
-            <birth>02-06-1990</birth>
-        </client>
+        <client><fullname>Иванов Петр</fullname><email>petr@ivanov.nn</email><telephone>8(913)247-33-55</telephone><birth>2023-11-09</birth></client>
     </clients>
     <orders>
         <order id_or="1">
@@ -58,12 +53,7 @@
             <date_of_employment>20-07-2023</date_of_employment>
             <birth>25.05.2000</birth>
         </employee>
-        <employee id_emp="2">
-            <post_id>2</post_id>
-            <fullname>Герасимов Антон Евгеньевич</fullname>
-            <date_of_employment>22-07-2023</date_of_employment>
-            <birth>05.01.2001</birth>
-        </employee>
+        <employee><fullname>Герасимов Антон Евгеньевич</fullname><date_of_employment>2023-11-03</date_of_employment><post_id>3</post_id><birth>2023-11-02</birth></employee>
     </employes>
     <posts>
         <post id_post="1">
@@ -248,4 +238,4 @@
             <date_done>04-08-2023T09:30</date_done>
         </delivery>
     </deliveries>
-<clients><client><fullname/><email/><telephone/><birth/></client></clients><list1/></workshop>
+</workshop>

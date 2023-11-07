@@ -10,8 +10,7 @@
     <?php
     $dom = new DOMDocument();
     $dom->load('../workshop.xml');
-    $ii = $_POST['row_index'];
-    $i = $ii - 1;
+    $i = $_POST['row_index'] - 1;
     $nodeToDelete = $dom->getElementsByTagName('employee')->item($i);
 
     if ($nodeToDelete) {
