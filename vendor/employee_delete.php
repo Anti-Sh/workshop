@@ -10,13 +10,15 @@
     <?php
     $dom = new DOMDocument();
     $dom->load('../workshop.xml');
+    $employes = $dom->createElement('arch_employes');
     $i = $_POST['row_index'] - 1;
     $nodeToDelete = $dom->getElementsByTagName('employee')->item($i);
 
     if ($nodeToDelete) {
-        $nodeToDelete->parentNode->removeChild($nodeToDelete);
+        $employee = $nodeToDelete->parentNode->removeChild($nodeToDelete);
+        $employes->appendChild($employee);
+        $dom->documentElement->appendChild($employes);
     }
-    print_r($nodeToDelete);
     $dom->save('../workshop.xml');
     ?>
     <meta http-equiv="refresh" content="0; url=../workshop.xml">

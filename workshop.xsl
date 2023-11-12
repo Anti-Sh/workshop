@@ -190,6 +190,71 @@
 
                 <p>Всего элементов: <xsl:value-of select="count(workshop/employes/employee)"/></p>
 
+                <h2>Clients Archive</h2>
+
+                <table border = "1"  id='arch_clients'>
+                    <thead>
+                        <tr bgcolor="purple">
+                            <th>№</th>
+                            <th>Fullname</th>
+                            <th>Email</th>
+                            <th>Telephone</th>
+                            <th>Birth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <xsl:for-each select = "workshop/arch_clients/client">
+                            <tr>
+                                <xsl:if test="position() mod 2=1">
+                                    <xsl:attribute name="style">
+                                        background-color: pink;
+                                    </xsl:attribute>
+                                </xsl:if> 
+                                <td><xsl:value-of select="position()"/></td>
+                                <td><xsl:value-of select="fullname"/></td>
+                                <td><xsl:value-of select="email"/></td>
+                                <td><xsl:value-of select="telephone"/></td>
+                                <td><xsl:value-of select="birth"/></td>
+                            </tr>
+                        </xsl:for-each>
+                    </tbody>
+                </table>
+
+                <p>Всего элементов: <xsl:value-of select="count(workshop/arch_clients/client)"/></p>
+
+                <h2>Employes Archive</h2>
+
+                <table border="1" id='arch_employes'>
+                    <thead>
+                        <tr bgcolor="purple">
+                            <th>№</th>
+                            <th>Post ID</th>
+                            <th>Fullname</th>
+                            <th>Date Of Employment</th>
+                            <th>Birth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <xsl:for-each select="workshop/arch_employes/employee">
+                            <tr>
+                                <xsl:if test="position() mod 2=1">
+                                    <xsl:attribute name="style">
+                                        background-color: pink;
+                                    </xsl:attribute>
+                                </xsl:if> 
+                                <td><xsl:value-of select="position()"/></td>
+                                <td><xsl:value-of select="post_id"/></td>
+                                <td><xsl:value-of select="fullname"/></td>
+                                <td><xsl:value-of select="date_of_employment"/></td>
+                                <td><xsl:value-of select="birth"/></td>
+                                
+                            </tr>
+                        </xsl:for-each>
+                    </tbody>
+                </table>
+
+                <p>Всего элементов: <xsl:value-of select="count(workshop/arch_employes/employee)"/></p>
+
                 <h2>Orders</h2>
                 <table border = "1"  id='orders'>
                     <thead>
