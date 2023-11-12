@@ -12,15 +12,15 @@
     $dom->load('../workshop.xml');
     $i = $_POST['row_index'] - 1;
     $counter = 0;
-    $nodesList = $dom->getElementsByTagName('employee');
-    $employes = $dom->getElementsByTagName('arch_employes');
+    $nodesList = $dom->getElementsByTagName('client');
+    $clients = $dom->getElementsByTagName('clients');
     if ($nodesList->length > 0) {
         foreach ($nodesList as $node) {
-            if ($node->parentNode->tagName == 'employes') {
+            if ($node->parentNode->tagName == 'arch_clients') {
                 if ($counter == $i) {
-                    if ($employes->length > 0) {
-                        $employee = $node->parentNode->removeChild($node);
-                        $employes->item(0)->appendChild($employee);
+                    if ($clients->length > 0) {
+                        $client = $node->parentNode->removeChild($node);
+                        $clients->item(0)->appendChild($client);
                         $dom->save('../workshop.xml');
                         break;
                     }

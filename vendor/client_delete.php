@@ -10,16 +10,25 @@
     <?php
     $dom = new DOMDocument();
     $dom->load('../workshop.xml');
-    $clients = $dom->createElement('arch_clients');
     $i = $_POST['row_index'] - 1;
-    $nodeToDelete = $dom->getElementsByTagName('client')->item($i);
-
-    if ($nodeToDelete) {
-        $client = $nodeToDelete->parentNode->removeChild($nodeToDelete);
-        $clients->appendChild($client);
-        $dom->documentElement->appendChild($clients);
+    $counter = 0;
+    $nodesList = $dom->getElementsByTagName('client');
+    $clients = $dom->getElementsByTagName('arch_clients');
+    if ($nodesList->length > 0) {
+        foreach ($nodesList as $node) {
+            if ($node->parentNode->tagName == 'clients') {
+                if ($counter == $i) {
+                    if ($clients->length > 0) {
+                        $client = $node->parentNode->removeChild($node);
+                        $clients->item(0)->appendChild($client);
+                        $dom->save('../workshop.xml');
+                        break;
+                    }
+                }
+                $counter += 1;
+            }
+        }
     }
-    $dom->save('../workshop.xml');
     ?>
     <meta http-equiv="refresh" content="0; url=../workshop.xml">
 </body>

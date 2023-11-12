@@ -13,10 +13,10 @@
     $i = $_POST['row_index'] - 1;
     $counter = 0;
     $nodesList = $dom->getElementsByTagName('employee');
-    $employes = $dom->getElementsByTagName('arch_employes');
+    $employes = $dom->getElementsByTagName('employes');
     if ($nodesList->length > 0) {
         foreach ($nodesList as $node) {
-            if ($node->parentNode->tagName == 'employes') {
+            if ($node->parentNode->tagName == 'arch_employes') {
                 if ($counter == $i) {
                     if ($employes->length > 0) {
                         $employee = $node->parentNode->removeChild($node);

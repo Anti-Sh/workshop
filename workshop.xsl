@@ -192,6 +192,12 @@
 
                 <h2>Clients Archive</h2>
 
+                <form name="cl_restore" class="client" method="post" action="vendor/client_restore.php" id="cl_restore">
+                    <label for="row_index">Восстановление строки: </label>
+                    <input type="number" name="row_index" id="row_index"/><br/>
+                    <input type="submit" name="submit1" disabled="true" value="Восстановить"/>
+                </form>
+
                 <table border = "1"  id='arch_clients'>
                     <thead>
                         <tr bgcolor="purple">
@@ -224,6 +230,11 @@
 
                 <h2>Employes Archive</h2>
 
+                <form name="emp_restore" class="employee" method="post" action="vendor/employee_restore.php" id="emp_restore">
+                    <label for="row_index">Восстановление строки: </label>
+                    <input type="number" name="row_index" id="row_index"/><br/>
+                    <input type="submit" name="submit1" disabled="true" value="Восстановить"/>
+                </form>
                 <table border="1" id='arch_employes'>
                     <thead>
                         <tr bgcolor="purple">
