@@ -16,7 +16,12 @@
             <birth>25-01-1980</birth>
         </client>
         
-    </clients>
+    <client>
+            <fullname>Иванов Петр</fullname>
+            <email>petr@ivanov.nn</email>
+            <telephone>8(913)247-33-55</telephone>
+            <birth>2023-11-09</birth>
+        </client></clients>
     <orders>
         <order id_or="1">
             <client_id>1</client_id>
@@ -48,7 +53,17 @@
     </orders>
     <employes>
         
-    </employes>
+    <employee>
+            <fullname>Герасимов Антон Евгеньевич</fullname>
+            <date_of_employment>2023-11-03</date_of_employment>
+            <post_id>3</post_id>
+            <birth>2023-11-02</birth>
+        </employee><employee id_emp="1">
+            <post_id>1</post_id>
+            <fullname>Антонов Герасим Евгеньевич</fullname>
+            <date_of_employment>20-07-2023</date_of_employment>
+            <birth>25.05.2000</birth>
+        </employee></employes>
     <posts>
         <post id_post="1">
             <name>Директор</name>
@@ -233,24 +248,9 @@
         </delivery>
     </deliveries>
     <arch_clients>
-        <client>
-            <fullname>Иванов Петр</fullname>
-            <email>petr@ivanov.nn</email>
-            <telephone>8(913)247-33-55</telephone>
-            <birth>2023-11-09</birth>
-        </client>
+        
     </arch_clients>
     <arch_employes>
-        <employee id_emp="1">
-            <post_id>1</post_id>
-            <fullname>Антонов Герасим Евгеньевич</fullname>
-            <date_of_employment>20-07-2023</date_of_employment>
-            <birth>25.05.2000</birth>
-        </employee>
-    <employee>
-            <fullname>Герасимов Антон Евгеньевич</fullname>
-            <date_of_employment>2023-11-03</date_of_employment>
-            <post_id>3</post_id>
-            <birth>2023-11-02</birth>
-        </employee></arch_employes>
+        
+    </arch_employes>
 </workshop>

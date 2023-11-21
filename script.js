@@ -61,4 +61,10 @@ $(() => {
         inputs.hasClass("bad-input") || notEmpty.length > 0 ? true : false
       );
   });
+
+  // Сортировка
+  $("#clients").tablesorter({
+    widgets: ["zebra"],
+  });
+  $("#employes").tablesorter({});
 });

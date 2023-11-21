@@ -6,6 +6,7 @@
                 <title>Computer Workshop</title>
                 <script src="./node_modules/jquery/dist/jquery.min.js"></script>
                 <script src="./node_modules/jquery.maskedinput/src/jquery.maskedinput.js"></script>
+                <script src="./node_modules/tablesorter/dist/js/jquery.tablesorter.min.js"></script>
                 <script src="./script.js"></script>
             </head>
             <style>
@@ -27,6 +28,24 @@
                 .bad-input {
                     border-color: red;
                     border-width: 2px;
+                }
+                .tablesorter-header-inner {
+                    display: inline;
+                }
+                .tablesorter-headerUnSorted::after,
+                .tablesorter-headerAsc::after,
+                .tablesorter-headerDesc::after {
+                    display: 'inline-block';
+                    margin-left: 10px;
+                }
+                .tablesorter-headerUnSorted::after {
+                    content: "►";
+                }
+                .tablesorter-headerAsc::after {
+                    content: "▲";
+                }
+                .tablesorter-headerDesc::after {
+                    content: "▼";
                 }
             </style>
             <body>
@@ -83,7 +102,7 @@
                     <input type="submit" name="submit1" disabled="true" value="Удалить запись"/>
                 </form>
 
-                <table border = "1"  id='clients'>
+                <table border = "1"  id='clients' class="tablesorter">
                     <thead>
                         <tr bgcolor="purple">
                             <th>№</th>
@@ -135,7 +154,7 @@
                     <input type="submit" name="submit1" disabled="true" value="Удалить запись"/>
                 </form>
 
-                <table border="1" id='employes'>
+                <table border="1" id='employes' class="tablesorter">
                     <thead>
                         <tr bgcolor="purple">
                             <th>№</th>
