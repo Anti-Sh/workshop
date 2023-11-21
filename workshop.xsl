@@ -47,6 +47,10 @@
                 .tablesorter-headerDesc::after {
                     content: "▼";
                 }
+
+                .odd { 
+                    background-color: pink;
+                }
             </style>
             <body>
                 <h3>Управление формой</h3>

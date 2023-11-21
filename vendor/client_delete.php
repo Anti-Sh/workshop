@@ -30,7 +30,7 @@
         }
     }
     ?>
-    <meta http-equiv="refresh" content="0; url=../workshop.xml">
+    <!-- <meta http-equiv="refresh" content="0; url=../workshop.xml"> -->
 </body>
 
 </html>
