@@ -6,17 +6,7 @@
         
         
         
-    <client id_cl="1">
-            <fullname>Ivan Ivanov</fullname>
-            <email>ivan@ivanov.nn</email>
-            <telephone>89132457898</telephone>
-            <birth>30-05-1975</birth>
-        </client><client id_cl="2">
-            <fullname>Ivan Petrov</fullname>
-            <email>ivan@petrov.nn</email>
-            <telephone>89132358423</telephone>
-            <birth>25-01-1980</birth>
-        </client><client>
+    <client><fullname>Петров Иван</fullname><email>ivan@petrov.nn</email><telephone>8(834)343-43-43</telephone><birth>1980-01-25</birth></client><client>
             <fullname>Иванов Петр</fullname>
             <email>petr@ivanov.nn</email>
             <telephone>8(913)247-33-55</telephone>
@@ -249,8 +239,13 @@
     </deliveries>
     <arch_clients>
         
-    </arch_clients>
+    <client id_cl="1">
+            <fullname>Ivan Ivanov</fullname>
+            <email>ivan@ivanov.nn</email>
+            <telephone>89132457898</telephone>
+            <birth>30-05-1975</birth>
+        </client></arch_clients>
     <arch_employes>
         
     </arch_employes>
-<clients><client><fullname>Иванов Петр</fullname><email>petr@iva.nn</email><telephone>8(234)234-23-42</telephone><birth>2023-11-11</birth></client></clients><clients><client><fullname>Петров Пётр</fullname><email>petr@iva.nn</email><telephone>8(823)423-42-34</telephone><birth>2023-11-12</birth></client></clients></workshop>
+<clients><client><fullname>Иванов Петр</fullname><email>petr@iva.nn</email><telephone>8(234)234-23-42</telephone><birth>2023-11-11</birth></client></clients><clients><client><fullname>Петров Пётр</fullname><email>petr@iva.nn</email><telephone>8(823)423-42-34</telephone><birth>2023-11-12</birth></client></clients><clients><client><fullname>Иванов Петро</fullname><email>ivano@petrov.nn</email><telephone>8(333)343-43-43</telephone><birth>1980-01-08</birth></client></clients></workshop>
